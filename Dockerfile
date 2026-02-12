@@ -15,5 +15,4 @@ WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
 
 EXPOSE 8080
-# Limitamos la memoria a 350MB para asegurar que cabe en el contenedor de Render (512MB)
-ENTRYPOINT ["java", "-Xmx350m", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
